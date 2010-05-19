@@ -3,7 +3,10 @@
 Those are little projects made using Processing an open source language and IDE to easily create images and animations. Its official site is at L<http://processing.org/>.
 
 I started using Processing in may 2010.
+
 =head1 Index
+
+You will find below quickly outdated descriptions of my various projects.
 
 =over 4
 
