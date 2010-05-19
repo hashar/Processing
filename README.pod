@@ -1,0 +1,15 @@
+=head1 README
+
+Those are little projects made using Processing an open source language and IDE to easily create images and animations. Its official site is at L<http://processing.org/>.
+
+I started using Processing in may 2010.
+=head1 Index
+
+=over 4
+=item dancing_rect
+
+=item firstrack
+
+=item tombourne
+
+=back
