@@ -6,6 +6,7 @@ I started using Processing in may 2010.
 =head1 Index
 
 =over 4
+
 =item dancing_rect
 
 =item firstrack
