@@ -36,7 +36,12 @@ void draw_rectangle( int step ) {
 
   rotate(2*PI * (1+ i % rot) / rot );
   stroke(255);
-  fill(102);
+  if( (step % 2) == 0 ) {
+    fill(102);
+  }
+  else {
+    fill( 80 );
+  }
   rectMode(CENTER);
   rect(0,0,(width * sqrt2 )/ratio,(height * sqrt2 )/ratio );
 
