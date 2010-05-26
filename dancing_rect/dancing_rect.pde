@@ -1,5 +1,5 @@
-int rot = 50;
-int max_r = 4;
+int rot = 200;
+int max_r = 3;
 float sqrt2 = sqrt(2);
 
 void setup() {
@@ -13,18 +13,17 @@ void setup() {
 /*
  TODO : recursion du type rectangle( r_level );
  puis rotation en fonction du niveau de recursivité;
-
-*/
+ 
+ */
 
 int i=0;
 void draw() {
   fill(0,50);
   rectMode(CORNER);
   rect(0,0,width,height);
-  
+
   pushMatrix();
   translate(width/2,height/2);
-
   draw_rectangle(1);
   popMatrix();
   i++;
@@ -34,20 +33,31 @@ void draw() {
 void draw_rectangle( int step ) {
   float ratio = pow( 2, step );
 
-  rotate(2*PI * (1+ i % rot) / rot );
   stroke(255);
-  if( (step % 2) == 0 ) {
-    fill(102);
-  }
-  else {
-    fill( 80 );
-  }
-  rectMode(CENTER);
-  rect(0,0,(width * sqrt2 )/ratio,(height * sqrt2 )/ratio );
+  
+  fill( 255 * step/max_r );
 
-  println( "DBG> step: " + step + " ratio: " + ratio );
+  rectMode(CENTER);
+  println( "loop for step #" + step );
+  for(int c=0; c<step; c++) {
+    for(int l=0; l<step; l++) {
+      float wr = (width * sqrt2 )/ratio;
+      float hr =  (height * sqrt2 )/ratio;
+      
+      pushMatrix();
+        //println( "c,l: " + c + ","+ l + "  step: " + step  );
+        rotate(2*PI * (1 + i % rot) / rot );
+        translate( wr * c, hr * l );
+        rotate(2*PI * (1 + i % rot) / rot * step);
+        rect(0,0,wr,hr);
+      popMatrix();
+    }
+  }
+
+  //println( "DBG> step: " + step + "/" + max_r + " ratio: " + ratio );
   if( step < max_r ) {
     draw_rectangle( ++step ); 
   }
 }
+
 
