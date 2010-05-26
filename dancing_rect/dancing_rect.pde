@@ -1,7 +1,7 @@
 int rot = 50;
 
 void setup() {
-  size(300,300); 
+  size(500,500);
   background(0,0,0);
   smooth();
   frameRate(20);
