@@ -14,16 +14,24 @@ You will find below some descriptions of my various projects.
 
 Click to generate a growing and fading disk. It is supposed to distract my 5 months old daughter :-D
 
+http://hashar.github.com/Processing/BacASable/
+
 =item dancing_rect
 
 Psychedlic moving boxes.
 
-=item firstrack
+http://hashar.github.com/Processing/dancing_rect/
+
+=item firsttrack
 
 Bouncing balls. Did that using x86 ASM a looong time ago. Processing makes this way easier :-d
+
+http://hashar.github.com/Processing/firsttrack/
 
 =item tombourne
 
 Not sure what it was meant for :-d  Does not draw anything yet!
+
+http://hashar.github.com/Processing/tombourne/
 
 =back
