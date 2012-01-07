@@ -4,6 +4,7 @@ int n_obstacles = w * h / 5;
 pix[] obstacles = new pix[n_obstacles];
 
 ArrayList snakes;
+n_snakes = int( w / 10 );
 
 void setup() {
   size(w,h);
@@ -16,22 +17,9 @@ void setup() {
   draw_obstacles();
 
   snakes = new ArrayList();
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
-  snakes.add( new Snake() );
+  while( n_snakes-- ) {
+    snakes.add( new Snake() );
+  }
 }
 
 void draw() {
