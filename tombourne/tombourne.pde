@@ -75,14 +75,15 @@ class Snake {
 			} else {
 				x -= weight;
 			}
+		} else if( obstacleOnLeft && obstacleOnRight ) {
+			blocked = true;
+			return;
 		} else if( obstacleOnLeft ) {
 			x += weight; // go to the right
 		} else if( obstacleOnRight ) {
 			x -= weight; // go to the left
 		} else {
-			println( "We are blocked!!" );
-			blocked = true;
-			return;
+			// no obstacle, already handled above
 		}
 		y += weight;
 		draw();
