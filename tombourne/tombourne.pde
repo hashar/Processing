@@ -1,6 +1,6 @@
 int w = 400, h = 600;
 
-int n_obstacles = w * h / 30;
+int n_obstacles = w * h / 70;
 pix[] obstacles = new pix[n_obstacles];
 
 ArrayList snakes;
