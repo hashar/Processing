@@ -1,6 +1,6 @@
 int w = 150, h = 600;
 
-int n_obstacles = w * h / 50;
+int n_obstacles = w * h / 5;
 pix[] obstacles = new pix[n_obstacles];
 
 void setup() {
@@ -16,6 +16,7 @@ void setup() {
 void draw() {
 
 }
+
 
 void init_obstacles() {
   int[][] track = new int[w][h];
@@ -34,7 +35,7 @@ void init_obstacles() {
 }
 
 void draw_obstacles() {
-  stroke(255);
+  stroke(128);
   for(int i=0;i<n_obstacles;i++) {
        obstacles[i].draw();
   }
