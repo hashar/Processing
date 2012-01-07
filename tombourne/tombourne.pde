@@ -1,10 +1,10 @@
-int w = 150, h = 600;
+int w = 400, h = 600;
 
 int n_obstacles = w * h / 30;
 pix[] obstacles = new pix[n_obstacles];
 
 ArrayList snakes;
-n_snakes = int( w / 10 );
+n_snakes = int( w / 30 );
 
 // Let you "zoom" pixels
 weight = 3;
