@@ -72,7 +72,7 @@ class Snake {
 		}
 
 		obstacleOnLeft  = ( get(x-1,y) != color(0) );
-		obstacleOnRight = ( get(x-1,y) != color(0) );
+		obstacleOnRight = ( get(x+1,y) != color(0) );
 
 		if( !obstacleOnLeft && !obstacleOnRight ) {
 			// choose randomly between left and right
