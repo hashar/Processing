@@ -7,7 +7,7 @@ ArrayList snakes;
 n_snakes = int( w / 30 );
 
 // Let you "zoom" pixels
-weight = 3;
+weight = 3; // keep it odd
 
 void setup() {
   size(w,h,P2D);
@@ -16,7 +16,8 @@ void setup() {
   smooth();
   frameRate(60);
 
-  strokeWeight( weight );
+  rectMode( CENTER );
+  //strokeWeight( weight );
 
   init_obstacles();
   draw_obstacles();
@@ -89,8 +90,9 @@ class Snake {
 	}
 
 	void draw() {
-		stroke( c );
-		point(x,y);
+		noStroke();
+		fill( c );
+		rect( x, y, weight, weight );
 	}
 }
 
@@ -112,6 +114,8 @@ void init_obstacles() {
 }
 
 void draw_obstacles() {
+  fill( 1 ); // 0 means it is not an obstacle!
+
   stroke(128);
   for(int i=0;i<n_obstacles;i++) {
        obstacles[i].draw();
@@ -122,5 +126,8 @@ void draw_obstacles() {
 class pix {
   int x,y;
   pix( int a, int b) { x = a; y = b; }
-  void draw() { point(x,y); }
+  void draw() {
+    //point(x,y);
+    rect( x, y, weight, weight );
+  }
 }
