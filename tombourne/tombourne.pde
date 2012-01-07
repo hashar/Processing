@@ -1,10 +1,13 @@
 int w = 150, h = 600;
 
-int n_obstacles = w * h / 5;
+int n_obstacles = w * h / 30;
 pix[] obstacles = new pix[n_obstacles];
 
 ArrayList snakes;
 n_snakes = int( w / 10 );
+
+// Let you "zoom" pixels
+weight = 3;
 
 void setup() {
   size(w,h);
@@ -12,6 +15,8 @@ void setup() {
   colorMode( HSB, 255 );
   smooth();
   frameRate(60);
+
+  strokeWeight( weight );
 
   init_obstacles();
   draw_obstacles();
@@ -54,31 +59,31 @@ class Snake {
 
 
 		if( get(x,y+1) == color(0) ) {
-			y++;
+			y += weight;
 			draw();
 			return;
 		}
 
-		obstacleOnLeft  = ( get(x-1,y) != color(0) );
-		obstacleOnRight = ( get(x+1,y) != color(0) );
+		obstacleOnLeft  = ( get(x-weight,y) != color(0) );
+		obstacleOnRight = ( get(x+weight,y) != color(0) );
 
 		if( !obstacleOnLeft && !obstacleOnRight ) {
 			// choose randomly between left and right
 			if( 1 == int( random(2) ) ) {
-				x++;
+				x += weight;
 			} else {
-				x--;
+				x -= weight;
 			}
 		} else if( obstacleOnLeft ) {
-			x++; // go to the right
+			x += weight; // go to the right
 		} else if( obstacleOnRight ) {
-			x--; // go to the left
+			x -= weight; // go to the left
 		} else {
 			println( "We are blocked!!" );
 			blocked = true;
 			return;
 		}
-		y++;
+		y += weight;
 		draw();
 
 	}
@@ -94,8 +99,8 @@ void init_obstacles() {
   int[][] track = new int[w][h];
   int x, y;
   for(int i=0;i<n_obstacles;i++) {
-    x = int(random(0,w));
-    y = int(random(0,h));
+    x = weight * int(random(0,w/weight));
+    y = weight * int(random(0,h/weight));
     if( track[x][y] == 1 ) {
       i--;
     }
