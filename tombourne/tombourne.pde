@@ -59,7 +59,7 @@ class Snake {
 		}
 
 
-		if( get(x,y+1) == color(0) ) {
+		if( get(x,y+weight) == color(0) ) {
 			y += weight;
 			draw();
 			return;
