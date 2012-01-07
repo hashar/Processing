@@ -19,7 +19,7 @@ Ball[] balls = new Ball[balls_number];
 
 void setup() {
   // Create a black window, antialiasing and 60fps
-  size(300,300);
+  size(300,300,P2D);
   background(0,0,0);
   smooth();
   frameRate(60);

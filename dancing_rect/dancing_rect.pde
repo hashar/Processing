@@ -9,7 +9,7 @@ float sqrt2 = sqrt(2);
 
 // usual program wide initializations
 void setup() {
-  size(canvas_size,canvas_size);
+  size(canvas_size,canvas_size, P2D);
   background(0,0,0);
   smooth();
   frameRate(60);

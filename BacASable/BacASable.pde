@@ -5,7 +5,7 @@ void setup() {
 	height = screen.height;
 	radius = 50;
 
-	size( width, height);
+	size( width, height, P2D);
 	background(0);
 	frameRate( 15 );
 	smooth();

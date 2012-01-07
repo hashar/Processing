@@ -10,7 +10,7 @@ n_snakes = int( w / 30 );
 weight = 3;
 
 void setup() {
-  size(w,h);
+  size(w,h,P2D);
   background(0,0,0);
   colorMode( HSB, 255 );
   smooth();
