@@ -1,0 +1,29 @@
+=head1 README
+
+Those are little projects made using Processing an open source language and IDE to easily create images and animations. Its official site is at L<http://processing.org/>.
+
+I started using Processing in may 2010.
+
+=head1 Index
+
+You will find below some descriptions of my various projects.
+
+=over 4
+
+=item BacASable
+
+Click to generate a growing and fading disk. It is supposed to distract my 5 months old daughter :-D
+
+=item dancing_rect
+
+Psychedlic moving boxes.
+
+=item firstrack
+
+Bouncing balls. Did that using x86 ASM a looong time ago. Processing makes this way easier :-d
+
+=item tombourne
+
+Not sure what it was meant for :-d  Does not draw anything yet!
+
+=back
