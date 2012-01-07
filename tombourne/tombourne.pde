@@ -1,6 +1,6 @@
-int w = 150, h = 400;
+int w = 150, h = 600;
 
-int n_obstacles = 40;
+int n_obstacles = w * h / 50;
 pix[] obstacles = new pix[n_obstacles];
 
 void setup() {
@@ -40,10 +40,9 @@ void draw_obstacles() {
   }
 }
 
-
 // wrapper to represent en draw a point
 class pix {
   int x,y;
   pix( int a, int b) { x = a; y = b; }
-  void draw() { point(x,y); } 
+  void draw() { point(x,y); }
 }
