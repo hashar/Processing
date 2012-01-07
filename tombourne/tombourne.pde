@@ -4,7 +4,7 @@ int n_obstacles = 40;
 pix[] obstacles = new pix[n_obstacles];
 
 void setup() {
-  size(w,h); 
+  size(w,h);
   background(0,0,0);
   smooth();
   frameRate(60);
@@ -25,7 +25,7 @@ void init_obstacles() {
     y = int(random(0,h));
     if( track[x][y] == 1 ) {
       i--;
-    } 
+    }
     else {
       track[x][y] = 1;
       obstacles[i] = new pix(x,y);
