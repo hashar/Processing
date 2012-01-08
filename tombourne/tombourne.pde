@@ -39,6 +39,9 @@ void draw() {
 			snakes.remove(i);
 		}
 	}
+	if( snakes.size() == 0 ) {
+		noLoop();
+	}
 }
 
 class Snake {
