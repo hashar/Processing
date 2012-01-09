@@ -22,7 +22,6 @@ void setup() {
 	size(w,h,P2D);
 	background(0);
 	colorMode( HSB, 255 );
-	smooth();
 	frameRate(60);
 
 	// Buffer to draw obstacles
@@ -40,7 +39,7 @@ void setup() {
 	for (i=i+w+1; i<w*h; i+=weight+1) {
 		if( random(1) < overlaydensity ) {
 			n_rect++;
-				overlay.fill( (n_rect*4)%255 );
+				overlay.fill( 64 );
 				overlay.rect(
 				/* X: */ i%w,
 				/* Y: */ floor(i/w),
@@ -85,44 +84,48 @@ class Snake {
 
 	// Constructor
 	Snake() {
-		x = random( w );
-		y = 0;
+		step = weight+1;
+
+		x = 1 + 1 + ((int) random( 1 + cols ) ) * step;
+		y = 1;
 		c = color( random(255), 255, 255 );
 		blocked = false;
+
+		draw(); // Show the snake at the top
 	}
 
 	void fall() {
+
 		if( blocked ) {
 			return;
 		}
 
-		if( get(x,y+weight) == color(0) ) {
-			y += weight;
+		if( get(x,y+step) == color(0) ) {
+			y += step;
 			draw();
 			return;
 		}
 
-		obstacleOnLeft  = ( get(x-weight,y) != color(0) );
-		obstacleOnRight = ( get(x+weight,y) != color(0) );
+		obstacleOnLeft  = ( get(x-step,y) != color(0) );
+		obstacleOnRight = ( get(x+step,y) != color(0) );
 
 		if( !obstacleOnLeft && !obstacleOnRight ) {
 			// choose randomly between left and right
 			if( 1 == int( random(2) ) ) {
-				x += weight;
+				x += step;
 			} else {
-				x -= weight;
+				x -= step;
 			}
 		} else if( obstacleOnLeft && obstacleOnRight ) {
 			blocked = true;
 			return;
 		} else if( obstacleOnLeft ) {
-			x += weight; // go to the right
+			x += step; // go to the right
 		} else if( obstacleOnRight ) {
-			x -= weight; // go to the left
+			x -= step; // go to the left
 		} else {
 			// no obstacle, already handled above
 		}
-		y += weight;
 		draw();
 
 	}
