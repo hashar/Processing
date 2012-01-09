@@ -10,8 +10,10 @@ weight = 6;
 int w = cols * (weight + 1) + 1 ;
 int h = rows * (weight + 1) + 1 ;
 
+int last_y = h - weight - 1;
+
 PGraphics overlay;
-overlaydensity = 0.3;
+overlaydensity = 0.15;
 
 // Snakes which will move around obstacles
 ArrayList snakes;
@@ -95,8 +97,7 @@ class Snake {
 	}
 
 	void fall() {
-
-		if( blocked ) {
+		if( blocked || y >= last_y ) {
 			return;
 		}
 
