@@ -10,10 +10,6 @@ weight = 6;
 int w = cols * (weight + 1) + 1 ;
 int h = rows * (weight + 1) + 1 ;
 
-// Number of obstacles to be shown
-int n_obstacles = w * h / 70;
-pix[] obstacles = new pix[n_obstacles];
-
 PGraphics overlay;
 overlaydensity = 0.3;
 
@@ -59,12 +55,6 @@ void setup() {
 	}
 	overlay.endDraw();
 
-	//strokeWeight( weight );
-
-	/*
-	init_obstacles();
-	draw_obstacles();
-*/
 	snakes = new ArrayList();
 	while( n_snakes-- ) {
 		snakes.add( new Snake() );
@@ -144,38 +134,3 @@ class Snake {
 	}
 }
 
-
-void init_obstacles() {
-	int[][] track = new int[w][h];
-	int x, y;
-	for(int i=0;i<n_obstacles;i++) {
-		x = weight * int(random(0,w/weight));
-		y = weight * int(random(0,h/weight));
-		if( track[x][y] == 1 ) {
-			i--;
-		}
-		else {
-			track[x][y] = 1;
-			obstacles[i] = new pix(x,y);
-		}
-	}
-}
-
-void draw_obstacles() {
-	fill( 1 ); // 0 means it is not an obstacle!
-
-	stroke(128);
-	for(int i=0;i<n_obstacles;i++) {
-		obstacles[i].draw();
-	}
-}
-
-// wrapper to represent en draw a point
-class pix {
-	int x,y;
-	pix( int a, int b) { x = a; y = b; }
-	void draw() {
-		//point(x,y);
-		rect( x, y, weight, weight );
-	}
-}
