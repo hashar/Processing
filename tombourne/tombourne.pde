@@ -4,6 +4,7 @@ int rows = 80 ;
 
 // Size of the virtual pixels
 weight = 6;
+int dy = weight + 1;
 
 // Compute canvas size in pixels. Each virtual pixel
 // has a 1 pixel border so we need to add that
@@ -56,6 +57,8 @@ void setup() {
 	}
 	overlay.endDraw();
 
+	snakeLayer = createGraphics( w, h, P2D );
+	snakeLayer.background( 0 );
 	snakes = new ArrayList();
 	while( n_snakes-- ) {
 		snakes.add( new Snake() );
@@ -64,7 +67,12 @@ void setup() {
 
 void draw() {
 	// Overlay which contains obstacles
-	image( overlay, 0, 0);
+	image( snakeLayer, 0, 0);
+	image( overlay   , 0, dy);
+	image( overlay   , 0, h+dy);
+
+	dy -= weight;
+	dy = dy % h;
 
 	for( int i = snakes.size() - 1; i>=0; i-- ) {
 		Snake snake = (Snake) snakes.get(i);
@@ -132,9 +140,9 @@ class Snake {
 	}
 
 	void draw() {
-		noStroke();
-		fill( c );
-		rect( x, y, weight, weight );
+		snakeLayer.noStroke();
+		snakeLayer.fill( c );
+		snakeLayer.rect( x, y, weight, weight );
 	}
 }
 
