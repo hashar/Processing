@@ -1,0 +1,86 @@
+22 minutes work session recorded via Google Hangout on air
+
+
+Software showcased
+------------------
+
+Colloquy
+Gerrit
+git
+Gmane.org
+Mac OS X
+Mozilla Thunderbird
+OpenSsh
+Safari
+Terminal!
+Vim
+
+
+Direction
+---------
+
+Sequence editor: Blender
+Drawings: Inkscape
+Scrolling: Processing
+Swiss army knife: Python
+
+
+Acknowledgments
+---------------
+
+Victor Grigas
+« Antoine Musso portrait »
+
+© 2012  Victor Grigas
+Licensed under CC-BY-SA
+http://wikimediafoundation.org/wiki/File:Antoine_Musso-3500.jpg
+
+
+Professor Kliq
+« Plastic & Flashing Lights »
+
+© 2006-2007 Professor Kliq
+Licensed under CC-BY-NC-SA
+http://www.professorkliq.com/
+
+
+Thanks
+------
+
+All the folks at Wikimedia Foundation
+
+Brion Vibber
+For his help during recording
+
+La Cantine coworking place
+http://cantine.atlantic2.org/
+
+Alix Musso
+She slept well over the week-end
+and has let me sprint process this video
+
+Mathilde
+For all her support so far
+
+
+
+Recorded in Nantes, France
+on Oct 25th 2013
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright © Antoine Musso, 2013
+Licensed under CC-BY-NC-SA
+http://creativecommons.org/licenses/by-nc-sa/3.0/
